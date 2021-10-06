@@ -35,6 +35,17 @@ def write_colour(house):
 
     return f"Thank you for choosing the {house} house!" 
 
+@app.route("/reset")
+def reset():
+    houselist = ["etheldreda","turing","franklin","scott","seacole"]
+    for i in range(0,4):
+        house = houselist[i]
+        with open(f"{house}_counter.txt","w") as f:
+            f.write(0)
+
+    with open("input.txt", "w") as f:
+        f.write("white")
+
 
 if __name__ == "__main__":
     server = Server(app.wsgi_app)
