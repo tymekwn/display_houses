@@ -46,6 +46,8 @@ def reset():
     with open("input.txt", "w") as f:
         f.write("white")
 
+    return "Reset Complete."
+
 
 if __name__ == "__main__":
     server = Server(app.wsgi_app)
